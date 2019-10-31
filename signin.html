@@ -3,21 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="node_modules/bulma/css/bulma.css"/>
         <link rel="stylesheet" href="stylesheet.css"/>
         <title>Can I get a vibe check . com</title>
     </head>
 
     <body>
         <!--<div id="root"></div>-->
-
-        <h1>Sign in</h1>
-        <form>
-            Username: <br>
-            <input type = "text"><br>
-            Password: <br>
-            <input type = "text"><br>
-        </form>
-        <a href = "index.html">Home</a> 
-        <a href = "home.html">Submit</a>
+        <section class="hero is-dark is full-height">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">Can I get a vibe check?</h1>
+                    <h2 class="subtitle"> A web application where you can upload and share music!</h2>
+                    <a href = "index.html" class = "button is-warning">Home</a>
+                    <a href = "home.html" class = "button is-warning">Submit</a>
+                </div>
+            </div>
+        </section>
+        <section class = "hero is-warning">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">Sign In</h1>
+                    <form>
+                        Username: <br>
+                        <input class = "input is-primary" type = "text"><br>
+                        Password: <br>
+                        <input class = "input is-primary" type = "text"><br>
+                    </form>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
