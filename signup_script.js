@@ -6,9 +6,10 @@ async function renderPage() {
         let error = false;
         event.preventDefault();
         console.log(e.target);
-        let user = e.target.user.value
-        let pass = e.target.pass.value
+        let user = e.target.user.value;
+        let pass = e.target.pass.value;
         let name = e.target.name.value;
+        console.log(user);
         const response =  axios({
             method: 'POST',
             url: 'http://localhost:3000/account/create',
