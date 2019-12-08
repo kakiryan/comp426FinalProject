@@ -47,6 +47,12 @@
       "data": {
         "firstname": "kaki33"
       }
+    },
+    "aproca": {
+      "passwordHash": "$2a$10$HZfKjkrUCc8HCpmPbjLE7Opnf5x8sUgAjuQ3Al4x2oYW.A5LSytBy",
+      "data": {
+        "firstname": "Alex Proca"
+      }
     }
   }
 }
