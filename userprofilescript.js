@@ -1,20 +1,45 @@
-const handleEditBio = function(event) {
-    let html = `<textarea class="textarea" id="changes" placeholder="e.g. Hello! My name is Bob."></textarea>`;
-    let html2 = `<input class="button is-dark is-small" id="editBioo" value = "Submit Changes" />`;
-$('.bio').append(html);
-$('.bio').append(html2);
-console.log("post");
-$('#editBioo').on('click', handleSubmit);
+let myStorage = window.localStorage;
+let jwt = myStorage.getItem('jwt');
+let user = myStorage.getItem('user');
+
+const userRoot = new axios.create({
+  baseURL: 'http://localhost:3000/user'
+})
+
+const handleEditBio = function (event) {
+  event.preventDefault()
+  let html = `<textarea class="textarea" id="changes" placeholder="e.g. Hello! My name is Bob."></textarea>`;
+  let html2 = `<input class="button is-dark is-small" id="editBioo" value = "Submit Changes" />`;
+  $('.bio').append(html);
+  $('.bio').append(html2);
+  console.log("post");
+  $('#editBioo').on('click', handleSubmit);
 }
 
-const handleSubmit = function(event) {
-    console.log("hereee");
-    let t = $('#changes').val();
-    $('.bio').text(t);
+async function updateUser(bio) {
+
+  let x = await userRoot.post(`/bios/`,
+    { data: bio }, {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+  console.log(jwt);
 }
 
-const handleEditPic = function(event) {
-    let html = `<div class="file is-warning" id="picture">
+async function getBio() {
+  return await userRoot.get('/bios', {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+}
+
+const handleSubmit = function (event) {
+  event.preventDefault();
+  let t = $('#changes').val();
+  $('.bio').text(t);
+  let z =  updateUser(t);
+}
+
+const handleEditPic = function (event) {
+  let html = `<div class="file is-warning" id="picture">
     <label class="file-label">
       <input class="file-input" type="file" name="resume">
       <span class="file-cta">
@@ -43,24 +68,34 @@ const handleEditPic = function(event) {
     }
   }
 
-    $('#editBioo2').on('click', handleSubmitPic);
+  $('#editBioo2').on('click', handleSubmitPic);
 
 }
 
-const handleSubmitPic = function(event) {
-    let t = $('#changes').val();
-    $('.bio').text(t);
+const handleSubmitPic = function (event) {
+  let t = $('#changes').val();
+  $('.bio').text(t);
 
-    let image = fileName.textContent;
-  
-      $('.pic').text(image); 
+  let image = fileName.textContent;
+
+  $('.pic').text(image);
 }
 
 
-$(function() {
-    $('#editBio').on('click', handleEditBio);
-    console.log("pre");
-    $('#changes').on('click', handleSubmit);
-    $('#editPic').on('click', handleEditPic);
+$(function () {
+  $('#editBio').on('click', handleEditBio);
+  console.log("pre");
+  $('#changes').on('click', handleSubmit);
+  $('#editPic').on('click', handleEditPic);
 
 });
+
+async function renderPage() {
+  $('#profileTitle').text(`${user}'s Profile`)
+  $('#credentials').text(`Logged in as: ${user}`)
+  let x = await getBio();
+  console.log(user);
+  $('.bio').text(x.data.result);
+}
+
+$(document).ready(renderPage());
