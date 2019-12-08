@@ -19,6 +19,28 @@
     "fake": {
       "passwordHash": "$2a$10$l9TdbMgzYQLml2dXt9Q.V.1h6gpDe4RLaQ09VZ5SlsMXbWalj1KtW",
       "data": {}
+    },
+    "test1": {
+      "passwordHash": "$2a$10$.5R0T9cQw1RpiyKjpn05suh6bQqHtKEBctroa2mlXmhef4EvraA0O",
+      "data": {}
+    },
+    "test2": {
+      "passwordHash": "$2a$10$nMIHpXjjZVYpC0HOl3eD4uAR1haYchyq/qKaH0J2UQFRVjDqverdC",
+      "data": {}
+    },
+    "test3": {
+      "passwordHash": "$2a$10$OrBDddMMdKLhvWJWPypoXeagUZTd9I44McVAL1AaLKtcCdfDbD4fm",
+      "data": {}
+    },
+    "test45": {
+      "passwordHash": "$2a$10$Z.n53YjKRi.Kxs6qPYvzMOaXu9GM7GiyZe2OwkBdkGPRKrB3/UQ1K",
+      "data": {}
+    },
+    "test33_username": {
+      "passwordHash": "$2a$10$GpHCPnG4pDozkB7C96pvBOS.mTxCIOAeFxazqFY5Uw.x4cUFaiKmO",
+      "data": {
+        "firstname": "test33"
+      }
     }
   }
 }
