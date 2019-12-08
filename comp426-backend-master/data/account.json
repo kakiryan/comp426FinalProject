@@ -48,10 +48,16 @@
         "firstname": "kaki33"
       }
     },
-    "aproca": {
-      "passwordHash": "$2a$10$HZfKjkrUCc8HCpmPbjLE7Opnf5x8sUgAjuQ3Al4x2oYW.A5LSytBy",
+    "test44": {
+      "passwordHash": "$2a$10$BXMExPPfNYYr/cG5z956ZuvXDuq5V6.fGO8mlOlmsfWDAz.fVvwoS",
       "data": {
-        "firstname": "Alex Proca"
+        "firstname": "Test44"
+      }
+    },
+    "hehe": {
+      "passwordHash": "$2a$10$71FMf59YsPRlIfgaSZF3DunSjig/edIifkMqW/Vj1ypxBV/ZdxOme",
+      "data": {
+        "firstname": "Test50"
       }
     }
   }
