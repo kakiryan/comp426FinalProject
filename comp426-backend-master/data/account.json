@@ -41,6 +41,12 @@
       "data": {
         "firstname": "test33"
       }
+    },
+    "kaki33": {
+      "passwordHash": "$2a$10$8nwWjCjCo615CSBCSmoN3.53BV4pRspkSONCiqC0u5Os.6juFAJQ.",
+      "data": {
+        "firstname": "kaki33"
+      }
     }
   }
 }
