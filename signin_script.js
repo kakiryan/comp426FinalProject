@@ -1,11 +1,14 @@
-//import { setToken } from "./config/Token";
+
+import {setToken} from "./config/Token.js"
+
+let myStorage = window.localStorage;
 
 async function renderPage() {
     let page = $('body');
     console.log('here');
-    $("#signUpForm").submit(function (e) {
+    $("#signInForm").submit(function (e) {
         let error = false;
-        event.preventDefault();
+        e.preventDefault();
         console.log(e.target);
         let user = e.target.user.value
         let pass = e.target.pass.value
@@ -15,21 +18,18 @@ async function renderPage() {
             data: {
                 "name": user,
                 "pass": pass,
-                "data": {
-                }
             }
         }).catch(e=> {
             error = true;
-            alert('Login failed');
-        }).then (() => {
-            const jwt = response.data.jwt;
-            //setToken(jwt);
-            if (!error) {
-                console.log('hi');
-                window.location.href = "home.html";
-            }
+            alert("Username or Password Incorrect");
+            console.log('error')
+        }).then ((response) => {
+            myStorage.setItem('jwt', response.data.jwt);
+            let jwt = myStorage.getItem('jwt');
+            window.location.href = "userprofile.html";
         });
         
     });
 }
 $(document).ready(renderPage());
+

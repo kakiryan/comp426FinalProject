@@ -48,10 +48,16 @@
         "firstname": "kaki33"
       }
     },
-    "everett": {
-      "passwordHash": "$2a$10$XwE/OZ7PxrGpwy7J8R2sXO/uiqC3MbryNxVSAhrV1YUzJV0IwaD5K",
+    "test44": {
+      "passwordHash": "$2a$10$BXMExPPfNYYr/cG5z956ZuvXDuq5V6.fGO8mlOlmsfWDAz.fVvwoS",
       "data": {
-        "firstname": "everett"
+        "firstname": "Test44"
+      }
+    },
+    "hehe": {
+      "passwordHash": "$2a$10$71FMf59YsPRlIfgaSZF3DunSjig/edIifkMqW/Vj1ypxBV/ZdxOme",
+      "data": {
+        "firstname": "Test50"
       }
     }
   }
