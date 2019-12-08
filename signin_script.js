@@ -1,4 +1,4 @@
-import { setToken } from "./config/Token";
+//import { setToken } from "./config/Token";
 
 async function renderPage() {
     let page = $('body');
@@ -23,7 +23,7 @@ async function renderPage() {
             alert('Login failed');
         }).then (() => {
             const jwt = response.data.jwt;
-            setToken(jwt);
+            //setToken(jwt);
             if (!error) {
                 console.log('hi');
                 window.location.href = "home.html";
