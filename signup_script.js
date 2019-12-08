@@ -3,6 +3,7 @@ async function renderPage() {
     let page = $('body');
     console.log('here');
     $("#signUpForm").submit(function (e) {
+        let error = false;
         event.preventDefault();
         console.log(e.target);
         let user = e.target.user.value
@@ -17,9 +18,15 @@ async function renderPage() {
                 "data": { "firstname": name,
                 }
             }
+        }).catch(e=> {
+            error = true;
+            alert('Someone else already has that user name!');
+        }).then (() => {
+            if (!error) {
+                window.location.href = "signin.html";
+            }
         });
-        console.log(response);
-        window.location.href = "signin.html";
+        
     });
 }
 $(document).ready(renderPage());
