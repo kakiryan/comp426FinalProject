@@ -1,5 +1,6 @@
 let sound = new Howl({
-    src: ['sounds/bensound-summer.mp3']
+    src: ['sounds/bensound-summer.mp3'],
+    loop: false
 });
 
 let play = () => {
