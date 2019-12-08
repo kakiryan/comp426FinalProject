@@ -8,11 +8,15 @@
         <title>Can I get a vibe check . com</title>
     </head>
     <body>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="node_modules/axios/dist/axios.min.js"></script>
+            <script type="module" src="userprofilescript.js"></script>
             <section class="hero is-dark is full-height">
                     <div class="hero-body">
                         <div class="container">
                             <h1 class="title">Vibe</h1>
                             <h2 class="credentials"> Logged in as: </h2>
+                            <br>
                             <a href="index.html" class="button is-warning">Home</a>
                             <a href="about.html" class="button is-warning">About us</a>
                             <a href="streampage.html" class="button is-warning">Stream</a>
@@ -21,13 +25,23 @@
                         </div>
                     </div>
                 </section>
-                <section class = "hero is-warning">
+                <section class = "hero is-danger is-small">
                     <div class="hero-body">
                         <div class="container">
                             <h1 class = "user"> ______'s Profile</h1>
                         </div>
                     </div>
                 </section>
+                <section class = "hero is-light">
+                        <div class="hero-body">
+                            <div class="container">
+                                <input class="button is-dark is-small" id="editBio" value = "Edit Bio" />
+                                <br>
+                                Bio:
+                                <h1 class ="bio"></h1>
+                            </div>
+                        </div>
+                    </section>
         <!--<div id="root"></div>-->
 
         <!-- add something so people can upload music, profile picture, and bio-->
