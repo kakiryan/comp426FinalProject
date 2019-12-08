@@ -47,6 +47,18 @@
       "data": {
         "firstname": "kaki33"
       }
+    },
+    "test44": {
+      "passwordHash": "$2a$10$BXMExPPfNYYr/cG5z956ZuvXDuq5V6.fGO8mlOlmsfWDAz.fVvwoS",
+      "data": {
+        "firstname": "Test44"
+      }
+    },
+    "hehe": {
+      "passwordHash": "$2a$10$71FMf59YsPRlIfgaSZF3DunSjig/edIifkMqW/Vj1ypxBV/ZdxOme",
+      "data": {
+        "firstname": "Test50"
+      }
     }
   }
 }
