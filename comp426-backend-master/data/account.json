@@ -1,0 +1,24 @@
+{
+  "users": {
+    "kaki": {
+      "passwordHash": "$2a$10$IApdzUh9kWa3gdMcOaXeuuFPi5C1OqV0ZbYz.MILoukSOIMvEA.Li",
+      "data": {}
+    },
+    "kakiryan": {
+      "passwordHash": "$2a$10$vR.doYeDl7AlRVvMK8Q1E.aCmH06Xtg0tqJBWTJ5brqnqsrirulUy",
+      "data": {}
+    },
+    "alex": {
+      "passwordHash": "$2a$10$zeDujxzsjtOtfHGIvnwfFuoX2cbDYLZFZmid48fz3.ytHdtoYK/5G",
+      "data": {}
+    },
+    "hello": {
+      "passwordHash": "$2a$10$0GxwhfwLxoPOMWTiXcAhQuLOdYcpTLXuB56152/vgxzgZl.7g9j2G",
+      "data": {}
+    },
+    "fake": {
+      "passwordHash": "$2a$10$l9TdbMgzYQLml2dXt9Q.V.1h6gpDe4RLaQ09VZ5SlsMXbWalj1KtW",
+      "data": {}
+    }
+  }
+}
