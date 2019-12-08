@@ -10,6 +10,9 @@
 </head>
 
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script type="module" src="signup_script.js"></script>
     <section class="hero is-dark is full-height">
         <div class="hero-body">
             <div class="container">
@@ -24,20 +27,21 @@
         </div>
     </section>
     <section class="hero is-warning">
-        <div class="hero-body">
+        <div class="hero-body" id="signUpDiv">
             <h1 class="title">Sign up</h1>
-            <form>
+            <form id="signUpForm" onsubmit="handleSubmitButtonPress()">
                 Name: <br>
-                <input class="input is=primary signupName" type="text"><br>
+                <input class="input is=primary signupName" type="text" name="name"><br>
                 Username: <br>
-                <input class="input is-primary signupUsername" type="text"><br>
+                <input class="input is-primary signupUsername" type="text" name="user"><br>
                 Password: <br>
-                <input class="input is-primary signupPassword" type="text"><br>
+                <input class="input is-primary signupPassword" type="text" name="pass"><br>
+                <input class="button is-dark" id="submitButton" type="submit" @click="handleSubmitButtonPress" />
             </form>
             <br>
-            <a class="button" href="index.html">Submit</a>
         </div>
     </section>
+
 </body>
 
 </html>

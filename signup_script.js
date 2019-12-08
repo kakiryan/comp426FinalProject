@@ -1,22 +1,32 @@
-const handleSubmitButtonPress = async(event) => {
-    var name = $(`.signupName`).val();
-    var user = $(`.signupUsername`).val();
-    var pass = $(`.signupPassword`).val(); //need to pass to check if valid. then sign in or not accordingly
+
+async function handleSubmitButtonPress(e) {
+    e.preventDefault();
+    console.log('hey')
+    console.log(e.target);
+    //let name = e.target.name.value
+    //let pass = e.target.pass.value
+    let name = "Test1";
+    let pass = "1234"
+    // await createAccount({name,  pass});
     const response = await axios({
         method: 'POST',
         url: 'http://localhost:3000/account/create',
         data: {
-            "name": user,
+            "name": name,
             "pass": pass,
             "data": {
-                "firstname": name
             }
         }
     });
+    console.log(response);
+    window.location.href = "signin.html";
+}
+
+async function renderPage() {
+    let page = $('body');
+    console.log('here');
+    $("#submitButton").click(handleSubmitButtonPress);
 }
 
 
-
-$(function() {
-    $(`.submitButton`).on("click", handleSubmitButtonPress);
-})
+$(document).ready(renderPage());
