@@ -47,6 +47,12 @@
       "data": {
         "firstname": "kaki33"
       }
+    },
+    "everett": {
+      "passwordHash": "$2a$10$XwE/OZ7PxrGpwy7J8R2sXO/uiqC3MbryNxVSAhrV1YUzJV0IwaD5K",
+      "data": {
+        "firstname": "everett"
+      }
     }
   }
 }
