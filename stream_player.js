@@ -1,3 +1,4 @@
+/*#
 //export default class stream_player {
     //constructor(audioPlayer) {
     export default const largeFunct = function(audioPlayer) {
@@ -182,4 +183,4 @@
             this.volumeControls.style.left = '-3px';
         }
     }
-
+*/
