@@ -5,6 +5,9 @@ let user = myStorage.getItem('user');
 const userRoot = new axios.create({
   baseURL: 'http://localhost:3000/user'
 })
+const privateRoot = new axios.create({
+  baseURL: 'http://localhost:3000/private'
+})
 
 const handleEditBio = function (event) {
   event.preventDefault()
@@ -35,6 +38,16 @@ async function updateUser(bio) {
     { data: bio }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
+  console.log(jwt);
+}
+
+async function updateUsers(user) {
+  console.log(user);
+  return await privateRoot.post(`/users/`+user,
+    { data: user }, {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+
   console.log(jwt);
 }
 
@@ -104,8 +117,12 @@ async function renderPage() {
   console.log(user);
   $('.bio').text(x.data.result);
   $('.pic').text("");
+
   $('.pic').append(html);}
-  
+  $('.pic').append(html);
+  let z = await updateUsers(user);
+  console.log(z.data.result)
+
 }
 
 
