@@ -90,6 +90,17 @@ async function getAllEmails() {
   return await pubRoot.get('/emails');
 }
 
+async function getUsers() {
+    const response2 = await axios({
+        method: 'GET',
+        url: 'http://localhost:3000/private/users',
+
+        headers: {Authorization: `Bearer ${jwt}`}
+    })
+    console.log(response2.data.result);
+}
+
+
 async function renderPage() {
     /*
   $('#email').on('click', handleSubmit);
