@@ -1,7 +1,7 @@
 //import streamer from "./stream.js";
 
 //let thestream = new streamer();
-
+/*
 const renderSong = function(song) {
     let ret = `<div class = "song">SongName</div>
     <div class = "artist">ArtistName</div>
@@ -21,7 +21,7 @@ const getSongs= async() => {
         });
     return songs["data"]
 } */
-
+/*
 $(function() {
   songs = getSongs();
   songs.then(function(result){
@@ -34,3 +34,42 @@ $(function() {
   });
 });
 
+*/
+
+let sound1 = new Howl({
+  src: ['sounds/bensound-summer.mp3']
+});
+
+let sound2 = new Howl({
+  src: ['sounds/Good Vibrations.mp3']
+});
+
+let play1 = () => {
+  sound1.play();
+};
+
+let pause1 = () => {
+  sound1.pause();
+};
+
+let play2 = () => {
+  sound2.play();
+};
+
+let pause2 = () => {
+  sound2.pause();
+};
+
+let playButton1 = document.getElementById('playButton1');
+let playButton2 = document.getElementById('playButton2');
+
+async function renderPage() {
+  let page = $('body');
+  page.on('click', '#playButton1', play1);
+  page.on('click', '#pauseButton1', pause1);
+  page.on('click', '#playButton2', play2);
+  page.on('click', '#pauseButton2', pause2);
+}
+
+
+$(document).ready(renderPage());
