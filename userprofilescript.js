@@ -76,7 +76,7 @@ const handleSubmitPic = function (event) {
   let t = $('#changes').val();
   $('.bio').text(t);
 
-  let image = fileName.textContent;
+  //let image = fileName.textContent;
 
   $('.pic').text(image);
 }
