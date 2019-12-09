@@ -1,4 +1,6 @@
 let count = 0;
+let myStorage = window.localStorage;
+let jwt = myStorage.getItem('jwt');
 function autocomplete(inp, arr) {
   var currentFocus;
   inp.addEventListener("input", function (e) {
@@ -89,6 +91,7 @@ async function getAllEmails() {
 }
 
 async function renderPage() {
+    /*
   $('#email').on('click', handleSubmit);
   getAllEmails().then(function(result) {
     console.log(result.data.result);
@@ -102,6 +105,10 @@ async function renderPage() {
     console.log(count);
   })
   console.log(count)
+  */
+  getUsers();
+  var countries = ["hi", "hey"];
+  autocomplete(document.getElementById("myInput"), countries);
   // $('#email').click(function (e) {
   //   event.preventDefault();
   //   console.log(e.target);
