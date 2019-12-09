@@ -16,6 +16,19 @@ const handleEditBio = function (event) {
   $('#editBioo').on('click', handleSubmit);
 }
 
+async function updatePic(pic) {
+
+  let x = await userRoot.post(`/pics/`,
+    { data : pic}, {
+      headers: {Authorization: `Bearer ${jwt}` }
+    })
+}
+async function getPic() {
+  return await userRoot.get('/pics', {
+    headers: {Authorization: `Bearer ${jwt}` }
+  })
+}
+
 async function updateUser(bio) {
 
   let x = await userRoot.post(`/bios/`,
@@ -41,50 +54,32 @@ const handleSubmit = function (event) {
 const handleEditPic = function (event) {
   event.preventDefault();
   let html = `<input type=file name=filename id=file>
-  <button type=button onclick='test()'>Display</button>`;
-  /*
-  `<div class="file is-warning" id="picture">
-    <label class="file-label">
-      <input class="file-input" type="file" name="resume">
-      <span class="file-cta">
-        <span class="file-icon">
-          <i class="fas fa-upload"></i>
-        </span>
-        <span class="file-label">
-          Choose a file…
-        </span>
-      </span>
-      <span class="file-name">
-      No File Uploaded
-    </span>
-    </label>
-  </div>`
-  */
-
-  //let html2 = `<input class="button is-dark is-small" id="editBioo2" value = "Submit Picture" />`;
+  <input class="button is-dark is-small" id="displayImage" value = "Display" />`;
 
   $('.pic').append(html);
-  //$('.pic').append(html2);
-  /*
-  const fileInput = document.querySelector('#picture input[type=file]');
-  fileInput.onchange = () => {
-    if (fileInput.files.length > 0) {
-      const fileName = document.querySelector('#picture .file-name');
-      fileName.textContent = fileInput.files[0].name;
-    }
-  }
-  */
-  //$('#editBioo2').on('click', handleSubmitPic);
+  $('#displayImage').on('click', handleSubmitPic);
 
 }
 
+
 const handleSubmitPic = function (event) {
-  let t = $('#changes').val();
-  $('.bio').text(t);
 
-  //let image = fileName.textContent;
+  console.log("here");
+  var file = document.getElementById('file').files[0];
+  var reader  = new FileReader();
+  reader.onload = function(e)  {
+      var image = document.createElement("img");
+      image.src = e.target.result;
+      $('.pic').text("");
+      $('.pic').append(image);
+      let z =  updatePic(image.src);
 
-  $('.pic').text(image);
+      // need to figure out how to get users from backend and use them for
+      // autocomplete
+      
+  }
+  reader.readAsDataURL(file);
+  
 }
 
 
@@ -100,8 +95,13 @@ async function renderPage() {
   $('#profileTitle').text(`${user}'s Profile`)
   $('#credentials').text(`Logged in as: ${user}`)
   let x = await getBio();
+  let y = await getPic();
+  let html = `<img src="${y.data.result}">`;
   console.log(user);
   $('.bio').text(x.data.result);
+  $('.pic').text("");
+  $('.pic').append(html);
+  
 }
 
 
