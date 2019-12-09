@@ -1,6 +1,6 @@
-import streamer from "./stream.js";
+//import streamer from "./stream.js";
 
-let thestream = new streamer();
+//let thestream = new streamer();
 
 const renderStreamContainer = function() {
     return `<div class = "song">Summer</div>
