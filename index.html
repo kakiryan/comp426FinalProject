@@ -9,6 +9,7 @@
     </head>
 
     <body>
+        <script type="module" src="index.js"></script>
         <!--<div id="root"></div>-->
 
         <section class="hero is-dark is full-height">
@@ -23,6 +24,12 @@
                     <a href = "library.html" class = "button is-warning">Library</a>
                     <a href = "eventspage.html" class = "button is-warning">Events</a>
                     <a id="profileButton" href = "userprofile.html" class ="button is-warning">My Profile</a>
+                    <form autocomplete="off" action="/action_page.php">
+                        <div class="autocomplete" style="width:300px;">
+                          <input id="myInput" type="text" name="myCountry" placeholder="Search for a profile">
+                        </div>
+                        <input type="submit">
+                      </form>
                 </div>
             </div>
         </section>
