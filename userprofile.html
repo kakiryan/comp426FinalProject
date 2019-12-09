@@ -47,6 +47,22 @@
                                     <div class="container">
                                         <h1 class="pic"></h1>
                                     </div>
+                                    <script>
+                                        function test() {
+                                            var file = document.getElementById('file').files[0];
+                                            var reader  = new FileReader();
+                                            reader.onload = function(e)  {
+                                                var image = document.createElement("img");
+                                                image.src = e.target.result;
+                                                $('.pic').text("");
+                                                $('.pic').append(image);
+
+                                                // need to figure out how to save picture onto the backend
+                                                //let z =  updateUser(image);
+                                            }
+                                            reader.readAsDataURL(file);
+                                        }
+                                    </script>
                                 </div>
                             </div>
                         </div>

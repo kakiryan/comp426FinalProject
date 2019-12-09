@@ -39,7 +39,11 @@ const handleSubmit = function (event) {
 }
 
 const handleEditPic = function (event) {
-  let html = `<div class="file is-warning" id="picture">
+  event.preventDefault();
+  let html = `<input type=file name=filename id=file>
+  <button type=button onclick='test()'>Display</button>`;
+  /*
+  `<div class="file is-warning" id="picture">
     <label class="file-label">
       <input class="file-input" type="file" name="resume">
       <span class="file-cta">
@@ -55,11 +59,13 @@ const handleEditPic = function (event) {
     </span>
     </label>
   </div>`
+  */
 
-  let html2 = `<input class="button is-dark is-small" id="editBioo2" value = "Submit Picture" />`;
+  //let html2 = `<input class="button is-dark is-small" id="editBioo2" value = "Submit Picture" />`;
 
   $('.pic').append(html);
-  $('.pic').append(html2);
+  //$('.pic').append(html2);
+  /*
   const fileInput = document.querySelector('#picture input[type=file]');
   fileInput.onchange = () => {
     if (fileInput.files.length > 0) {
@@ -67,8 +73,8 @@ const handleEditPic = function (event) {
       fileName.textContent = fileInput.files[0].name;
     }
   }
-
-  $('#editBioo2').on('click', handleSubmitPic);
+  */
+  //$('#editBioo2').on('click', handleSubmitPic);
 
 }
 
@@ -97,5 +103,6 @@ async function renderPage() {
   console.log(user);
   $('.bio').text(x.data.result);
 }
+
 
 $(document).ready(renderPage());

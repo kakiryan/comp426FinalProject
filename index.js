@@ -64,5 +64,27 @@ function autocomplete(inp, arr) {
   });
   }
 
-var countries = ["hi"];
-autocomplete(document.getElementById("myInput"), countries);
+  const pubRoot = new axios.create({
+    baseURL: 'http://localhost:3000/public'
+  })
+  
+  async function handleSubmit (event) {
+    event.preventDefault();
+    let y = document.getElementById('emailHolder').value;
+    console.log(y);
+    addEmail(y);
+  }
+  
+  async function addEmail(email) {
+    let x = await pubRoot.post(`/emails/`,
+    { data: email})
+    console.log(x);
+  }
+  
+  async function renderPage()  {
+    $('#email').on('click', handleSubmit);
+  }
+  
+  $(document).ready(renderPage());
+  
+  
