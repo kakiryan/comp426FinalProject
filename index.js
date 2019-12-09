@@ -97,7 +97,10 @@ async function getUsers() {
 
         headers: {Authorization: `Bearer ${jwt}`}
     })
-    console.log(response2.data.result);
+    var s = response2.data.result;
+    var keys = [];
+    for(var k in s) keys.push(k);
+    autocomplete(document.getElementById("myInput"), keys);
 }
 
 
@@ -118,8 +121,6 @@ async function renderPage() {
   console.log(count)
   */
   getUsers();
-  var countries = ["hi", "hey"];
-  autocomplete(document.getElementById("myInput"), countries);
   // $('#email').click(function (e) {
   //   event.preventDefault();
   //   console.log(e.target);
