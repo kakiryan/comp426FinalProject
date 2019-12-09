@@ -1,0 +1,100 @@
+{
+  "users": {
+    "kaki": {
+      "passwordHash": "$2a$10$IApdzUh9kWa3gdMcOaXeuuFPi5C1OqV0ZbYz.MILoukSOIMvEA.Li",
+      "data": {}
+    },
+    "kakiryan": {
+      "passwordHash": "$2a$10$vR.doYeDl7AlRVvMK8Q1E.aCmH06Xtg0tqJBWTJ5brqnqsrirulUy",
+      "data": {}
+    },
+    "alex": {
+      "passwordHash": "$2a$10$zeDujxzsjtOtfHGIvnwfFuoX2cbDYLZFZmid48fz3.ytHdtoYK/5G",
+      "data": {}
+    },
+    "hello": {
+      "passwordHash": "$2a$10$0GxwhfwLxoPOMWTiXcAhQuLOdYcpTLXuB56152/vgxzgZl.7g9j2G",
+      "data": {}
+    },
+    "fake": {
+      "passwordHash": "$2a$10$l9TdbMgzYQLml2dXt9Q.V.1h6gpDe4RLaQ09VZ5SlsMXbWalj1KtW",
+      "data": {}
+    },
+    "test1": {
+      "passwordHash": "$2a$10$.5R0T9cQw1RpiyKjpn05suh6bQqHtKEBctroa2mlXmhef4EvraA0O",
+      "data": {}
+    },
+    "test2": {
+      "passwordHash": "$2a$10$nMIHpXjjZVYpC0HOl3eD4uAR1haYchyq/qKaH0J2UQFRVjDqverdC",
+      "data": {}
+    },
+    "test3": {
+      "passwordHash": "$2a$10$OrBDddMMdKLhvWJWPypoXeagUZTd9I44McVAL1AaLKtcCdfDbD4fm",
+      "data": {}
+    },
+    "test45": {
+      "passwordHash": "$2a$10$Z.n53YjKRi.Kxs6qPYvzMOaXu9GM7GiyZe2OwkBdkGPRKrB3/UQ1K",
+      "data": {}
+    },
+    "test33_username": {
+      "passwordHash": "$2a$10$GpHCPnG4pDozkB7C96pvBOS.mTxCIOAeFxazqFY5Uw.x4cUFaiKmO",
+      "data": {
+        "firstname": "test33"
+      }
+    },
+    "kaki33": {
+      "passwordHash": "$2a$10$8nwWjCjCo615CSBCSmoN3.53BV4pRspkSONCiqC0u5Os.6juFAJQ.",
+      "data": {
+        "firstname": "kaki33"
+      }
+    },
+    "test44": {
+      "passwordHash": "$2a$10$BXMExPPfNYYr/cG5z956ZuvXDuq5V6.fGO8mlOlmsfWDAz.fVvwoS",
+      "data": {
+        "firstname": "Test44"
+      }
+    },
+    "hehe": {
+      "passwordHash": "$2a$10$71FMf59YsPRlIfgaSZF3DunSjig/edIifkMqW/Vj1ypxBV/ZdxOme",
+      "data": {
+        "firstname": "Test50"
+      }
+    },
+    "wffwwfw": {
+      "passwordHash": "$2a$10$ReONPIEbieA7XZWCXI.REOKoQ8faMBlteiKj6.yYh0p2LaXmyv2M2",
+      "data": {
+        "firstname": "dwfw"
+      }
+    },
+    "edesern!!": {
+      "passwordHash": "$2a$10$y7ZjN72CLlLKZTOGxTIc.uemJkpHtqmX5aLiySbWyINM9oBeMFZDi",
+      "data": {
+        "firstname": "everett"
+      }
+    },
+    "h": {
+      "passwordHash": "$2a$10$tjaZDnSuRRW10uqf.QTKJe7BwKm6M/xF5xhdpvyR13Bgzshq3jrXi",
+      "data": {
+        "firstname": "h"
+      }
+    },
+    "testing": {
+      "passwordHash": "$2a$10$sXNlJE.Ec1NrHIRL4gR8JuiLnhBCpdiEWq.kUQ/lyBgMII5w9KAsm",
+      "data": {
+        "firstname": "everett"
+      }
+    },
+    "edesern": {
+      "passwordHash": "$2a$10$n5mbigMCWu8eg7A/gMf8V./fvCjQCFLcTkM1XY2ktm4moiWoUhgx6",
+      "data": {
+        "firstname": "everett"
+      }
+    },
+    "dd": {
+      "passwordHash": "$2a$10$xAAW4o.F0C71L9B7DDNe/Ob/yfTmJB6c796pwFIzCX/1phczyvKkK",
+      "data": {
+        "firstname": "everett"
+      }
+    }
+  }
+}

@@ -128,18 +128,6 @@ async function renderPage() {
 
 $(document).ready(renderPage());
 
-<<<<<<< HEAD
-async function getUsers() {
-    const response2 = await axios({
-        method: 'GET',
-        url: 'http://localhost:3000/private/users',
-        
-          headers: { Authorization: `Bearer ${jwt}` }
-      }
-      )
-      console.log(response2.data.result);
-}
-=======
 var audioPlayer = document.querySelector('.green-audio-player');
 var playPause = audioPlayer.querySelector('#playPause');
 var playpauseBtn = audioPlayer.querySelector('.play-pause-btn');
@@ -321,4 +309,3 @@ function directionAware() {
   }
 }
 
->>>>>>> b5de56ef6563903618d7d52ad69530c8f26d35f4
