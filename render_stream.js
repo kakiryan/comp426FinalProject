@@ -47,3 +47,12 @@ const renderStreamContainer = function() {
           </div>`;
 }
 
+const getSongs= async() => {
+  let res = [];
+    const songs = await axios({
+        method: 'get',
+        url: 'http://localhost:3000/account/login',
+        withCredentials: true,
+        });
+    return songs["data"]
+}
