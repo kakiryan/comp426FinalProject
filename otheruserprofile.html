@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesheet.css"/>
+        <link rel="stylesheet" href="node_modules/bulma/css/bulma.css"/>
+        <title>ViBE . com</title>
+    </head>
+    <body>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="node_modules/axios/dist/axios.min.js"></script>
+            <script type="module" src="otheruserprofile.js"></script>
+            <section class="hero is-dark is full-height">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">ViBE</h1>
+                            <h2 id="credentials"> Logged in as: </h2>
+                            <br>
+                            <a href="index.html" class="button is-warning">Home</a>
+                            <a href="about.html" class="button is-warning">About us</a>
+                            <a href="streampage.html" class="button is-warning">Stream</a>
+                            <a href="library.html" class="button is-warning">Library</a>
+                            <a href="eventspage.html" class="button is-warning">Events</a>
+                        </div>
+                    </div>
+                </section>
+                <section class = "hero is-danger is-small">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 id="profileTitle" class = "user"> 's Profile</h1>
+                        </div>
+                    </div>
+                </section>
+                <section class = "hero is-light">
+                        <div class="hero-body">
+                            <div class="columns">
+                                <div class="column">
+                                    <input class="button is-dark is-small" id="editBio" value = "Edit Bio" />
+                                    <div class="container">
+                                        Bio: 
+                                        <h1 class ="bio"></h1>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <input class="button is-dark is-small" id="editPic" value = "Edit Picture" />
+                                    <div class="container">
+                                        <h1 class="pic"></h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+        <!--<div id="root"></div>-->
+
+        <!-- add something so people can upload music, profile picture, and bio-->
+    </body>
+</html>
