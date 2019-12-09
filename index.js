@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 function autocomplete(inp, arr) {
     var currentFocus;
     inp.addEventListener("input", function(e) {
@@ -64,5 +66,15 @@ function autocomplete(inp, arr) {
   });
   }
 
-var countries = ["hi"];
-autocomplete(document.getElementById("myInput"), countries);
+  const pubRoot = new axios.create({
+    baseURL: "http://localhost:3000"
+  });
+
+  async function getAccounts() {
+    return await pubRoot.get('/account');
+  }
+
+  (async () => {
+    let {data} = await getAccounts();
+    autocomplete(document.getElementById("myInput"), data);
+  })();
