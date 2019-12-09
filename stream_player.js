@@ -1,5 +1,7 @@
 //export default class stream_player {
     //constructor(audioPlayer) {
+
+/*
     export default const largeFunct = function(audioPlayer) {
         this.audioPlayer = audioPlayer;
         this.playPause = audioPlayer.querySelector('#playPause');
@@ -182,4 +184,4 @@
             this.volumeControls.style.left = '-3px';
         }
     }
-
+*/

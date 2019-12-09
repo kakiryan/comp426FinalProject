@@ -1,4 +1,4 @@
-import largeFunct from "./stream_player.js";
+//import largeFunct from "./stream_player.js";
 
 /*$(function() {
     var audioPlayer = document.querySelector('#song1');
@@ -20,8 +20,9 @@ export default class streamer {
         //strm2.doShit();
     }
 } */
-
+/*
 $(function() {
     let audioPlayer = document.querySelector('#song1');
     largeFunct(audioPlayer);
 });
+*/
