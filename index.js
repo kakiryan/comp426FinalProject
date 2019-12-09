@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 function autocomplete(inp, arr) {
     var currentFocus;
     inp.addEventListener("input", function(e) {
@@ -67,14 +65,26 @@ function autocomplete(inp, arr) {
   }
 
   const pubRoot = new axios.create({
-    baseURL: "http://localhost:3000"
-  });
-
-  async function getAccounts() {
-    return await pubRoot.get('/account');
+    baseURL: 'http://localhost:3000/public'
+  })
+  
+  async function handleSubmit (event) {
+    event.preventDefault();
+    let y = document.getElementById('emailHolder').value;
+    console.log(y);
+    addEmail(y);
   }
-
-  (async () => {
-    let {data} = await getAccounts();
-    autocomplete(document.getElementById("myInput"), data);
-  })();
+  
+  async function addEmail(email) {
+    let x = await pubRoot.post(`/emails/`,
+    { data: email})
+    console.log(x);
+  }
+  
+  async function renderPage()  {
+    $('#email').on('click', handleSubmit);
+  }
+  
+  $(document).ready(renderPage());
+  
+  
