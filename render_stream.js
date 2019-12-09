@@ -47,7 +47,6 @@ const renderStreamContainer = function() {
           </div>`;
 }
 
-<<<<<<< HEAD
 const getSongs= async() => {
   let res = [];
     const songs = await axios({
@@ -166,5 +165,3 @@ async function renderPage() {
 
 
 $(document).ready(renderPage());
-=======
->>>>>>> 12c9becfeb493aeda45fc0b2913401d9733becf9
