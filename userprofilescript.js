@@ -92,6 +92,9 @@ $(function () {
 });
 
 async function renderPage() {
+  if (jwt==null){
+    window.location.replace("http://localhost:3000/index.html");
+  }else{
   $('#profileTitle').text(`${user}'s Profile`)
   $('#credentials').text(`Logged in as: ${user}`)
   let x = await getBio();
@@ -100,7 +103,7 @@ async function renderPage() {
   console.log(user);
   $('.bio').text(x.data.result);
   $('.pic').text("");
-  $('.pic').append(html);
+  $('.pic').append(html);}
   
 }
 
