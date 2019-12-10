@@ -2,7 +2,7 @@ let myStorage = window.localStorage;
 let jwt = myStorage.getItem('jwt');
 let userProfile = myStorage.getItem('userProfile');
 const userRoot = new axios.create({
-  baseURL: `http://localhost:3000/user/${userProfile}`
+  baseURL: `http://localhost:3000/private/${userProfile}`
 })
 
 async function renderPage() {

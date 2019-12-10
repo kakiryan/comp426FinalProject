@@ -6,7 +6,7 @@ const userRoot = new axios.create({
   baseURL: 'http://localhost:3000/user'
 })
 const privateRoot = new axios.create({
-  baseURL: 'http://localhost:3000/private'
+  baseURL: `http://localhost:3000/private/${user}`
 })
 
 const handleEditBio = function (event) {
@@ -21,20 +21,20 @@ const handleEditBio = function (event) {
 
 async function updatePic(pic) {
 
-  let x = await userRoot.post(`/pics/`,
+  let x = await privateRoot.post(`/pics/`,
     { data : pic}, {
       headers: {Authorization: `Bearer ${jwt}` }
     })
 }
 async function getPic() {
-  return await userRoot.get('/pics', {
+  return await privateRoot.get('/pics', {
     headers: {Authorization: `Bearer ${jwt}` }
   })
 }
 
 async function updateUser(bio) {
 
-  let x = await userRoot.post(`/bios/`,
+  let x = await privateRoot.post(`/bios/`,
     { data: bio }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
@@ -52,7 +52,7 @@ async function updateUsers(user) {
 }
 
 async function getBio() {
-  return await userRoot.get('/bios', {
+  return await privateRoot.get('/bios', {
     headers: { Authorization: `Bearer ${jwt}` }
   })
 }

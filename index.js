@@ -3,6 +3,7 @@ let myStorage = window.localStorage;
 let jwt = myStorage.getItem('jwt');
 function autocomplete(inp, arr) {
   var currentFocus;
+  console.log("here");
   inp.addEventListener("input", function (e) {
     var a, b, i, val = this.value;
     closeAllLists();
@@ -93,11 +94,12 @@ async function getAllEmails() {
 async function getUsers() {
     const response2 = await axios({
         method: 'GET',
-        url: 'http://localhost:3000/private/users',
+        url: 'http://localhost:3000/private',
 
         headers: {Authorization: `Bearer ${jwt}`}
     })
     var s = response2.data.result;
+    console.log(s);
     var keys = [];
     for(var k in s) keys.push(k);
     autocomplete(document.getElementById("myInput"), keys);
