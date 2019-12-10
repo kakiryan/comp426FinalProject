@@ -118,8 +118,9 @@ async function renderPage() {
   $('.bio').text(x.data.result);
   $('.pic').text("");
 
-  $('.pic').append(html);}
   $('.pic').append(html);
+}
+  //$('.pic').append(html);
   let z = await updateUsers(user);
   console.log(z.data.result)
 
