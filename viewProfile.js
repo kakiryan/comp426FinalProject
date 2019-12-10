@@ -31,6 +31,12 @@ async function getPic() {
     headers: {Authorization: `Bearer ${jwt}` }
   })
 }
+
+async function getMusic() {
+  return await userRoot.get('/music', {
+    headers: {Authorization: `Bearer ${jwt}`}
+  })
+}
   
   
   $(document).ready(renderPage());

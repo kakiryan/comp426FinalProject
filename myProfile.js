@@ -19,16 +19,88 @@ const handleEditBio = function (event) {
   $('#editBioo').on('click', handleSubmit);
 }
 
-async function updatePic(pic) {
+const handleEditMusic = function(event) {
+  event.preventDefault();
+  let html1 = `<input type=file name=filename id=file>
+  <input class="button is-dark is-small" id="displayMusic" value = "Add" />`;
 
+  $('.musicc').append(html1);
+  console.log("hii");
+  $('#displayMusic').on('click', handleSubmitMusic);
+}
+
+const handleEditPic = function (event) {
+  event.preventDefault();
+  let html = `<input type=file name=filename id=file>
+  <input class="button is-dark is-small" id="displayImage" value = "Display" />`;
+
+  $('.pic').append(html);
+  $('#displayImage').on('click', handleSubmitPic);
+
+}
+
+
+const handleSubmitMusic = function (event) {
+  var file = document.getElementById('file').files[0];
+  var reader  = new FileReader();
+  reader.onload = function(e)  {
+      var audio = document.createElement("img");
+      audio.src = e.target.result;
+      $('.music').text("");
+      $('.music').append(audio);
+      let z =  updateMusic(audio.src);
+  }
+  reader.readAsDataURL(file);
+}
+
+const handleSubmitPic = function (event) {
+  var file = document.getElementById('file').files[0];
+  var reader  = new FileReader();
+  reader.onload = function(e)  {
+      var image = document.createElement("img");
+      image.src = e.target.result;
+      $('.pic').text("");
+      $('.pic').append(image);
+      let z =  updatePic(image.src);   
+  }
+  reader.readAsDataURL(file);
+}
+
+const handleSubmit = function (event) {
+  event.preventDefault();
+  let t = $('#changes').val();
+  $('.bio').text(t);
+  let z =  updateUser(t);
+}
+
+async function getPic() {
+  return await privateRoot.get('/pics', {
+    headers: {Authorization: `Bearer ${jwt}` }
+  })
+}
+
+async function updatePic(pic) {
   let x = await privateRoot.post(`/pics/`,
     { data : pic}, {
       headers: {Authorization: `Bearer ${jwt}` }
     })
 }
-async function getPic() {
-  return await privateRoot.get('/pics', {
-    headers: {Authorization: `Bearer ${jwt}` }
+
+async function getMusic() {
+  return await userRoot.get('/music', {
+    headers: {Authorization: `Bearer ${jwt}`}
+  })
+}
+async function updateMusic(music) {
+  let x = await privateRoot.post(`/music/`,
+    { data : music}, {
+      headers: {Authorization: `Bearer ${jwt}` }
+    })
+}
+
+async function getBio() {
+  return await privateRoot.get('/bios', {
+    headers: { Authorization: `Bearer ${jwt}` }
   })
 }
 
@@ -52,56 +124,13 @@ async function updateUsers(user) {
 }
 */
 
-async function getBio() {
-  return await privateRoot.get('/bios', {
-    headers: { Authorization: `Bearer ${jwt}` }
-  })
-}
-
-const handleSubmit = function (event) {
-  event.preventDefault();
-  let t = $('#changes').val();
-  $('.bio').text(t);
-  let z =  updateUser(t);
-}
-
-const handleEditPic = function (event) {
-  event.preventDefault();
-  let html = `<input type=file name=filename id=file>
-  <input class="button is-dark is-small" id="displayImage" value = "Display" />`;
-
-  $('.pic').append(html);
-  $('#displayImage').on('click', handleSubmitPic);
-
-}
-
-
-const handleSubmitPic = function (event) {
-
-  console.log("here");
-  var file = document.getElementById('file').files[0];
-  var reader  = new FileReader();
-  reader.onload = function(e)  {
-      var image = document.createElement("img");
-      image.src = e.target.result;
-      $('.pic').text("");
-      $('.pic').append(image);
-      let z =  updatePic(image.src);
-
-      // need to figure out how to get users from backend and use them for
-      // autocomplete
-      
-  }
-  reader.readAsDataURL(file);
-  
-}
-
 
 $(function () {
   $('#editBio').on('click', handleEditBio);
   console.log("pre");
   $('#changes').on('click', handleSubmit);
   $('#editPic').on('click', handleEditPic);
+  $('#editMusic').on('click', handleEditMusic);
 
 });
 
@@ -114,16 +143,20 @@ async function renderPage() {
   $('#credentials').text(`Logged in as: ${user}`)
   let x = await getBio();
   let y = await getPic();
+  let t = await getMusic();
   let html = `<img src="${y.data.result}">`;
+  let audio = `<audio crossorigin>
+                  <source src = "${t.data.result}" type = "audio/mpeg">
+              </audio>`
   console.log(user);
   $('.bio').text(x.data.result);
   $('.pic').text("");
-
   $('.pic').append(html);
+  $('.musicc').append(audio);
 }
   //$('.pic').append(html);
-  let z = await updateUsers(user);
-  console.log(z.data.result)
+  //let z = await updateUsers(user);
+  //console.log(z.data.result)
 
 }
 
