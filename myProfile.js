@@ -40,7 +40,7 @@ async function updateUser(bio) {
   })
   console.log(jwt);
 }
-
+/*
 async function updateUsers(user) {
   console.log(user);
   return await privateRoot.post(`/users/`+user,
@@ -50,6 +50,7 @@ async function updateUsers(user) {
 
   console.log(jwt);
 }
+*/
 
 async function getBio() {
   return await privateRoot.get('/bios', {
