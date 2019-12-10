@@ -99,10 +99,11 @@ async function getUsers() {
         headers: {Authorization: `Bearer ${jwt}`}
     })
     var s = response2.data.result;
-    console.log(s);
-    var keys = [];
-    for(var k in s) keys.push(k);
-    autocomplete(document.getElementById("myInput"), keys);
+    //console.log(s);
+    //var keys = [];
+    //for(var k in s) keys.push(k);
+    //console.log(keys);
+    autocomplete(document.getElementById("myInput"), s);
 }
 
 
