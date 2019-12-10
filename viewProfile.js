@@ -20,12 +20,16 @@ async function renderPage() {
   }
 
 
-async function getBio() {
-  return await userRoot.get('/bios')
-}
+  async function getBio() {
+    return await userRoot.get('/bios', {
+      headers: { Authorization: `Bearer ${jwt}` }
+    })
+  }
 
 async function getPic() {
-  return await userRoot.get('/pics')
+  return await userRoot.get('/pics', {
+    headers: {Authorization: `Bearer ${jwt}` }
+  })
 }
   
   
