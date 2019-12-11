@@ -11,11 +11,14 @@
 
 <body>
     <script type="module" src="library_script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="node_modules/axios/dist/axios.min.js"></script>
     <section class="hero is-dark is full-height">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">ViBE</h1>
-                <h2 class="subtitle"> A web application where you can upload and share music!</h2>
+                <h2 id="credentials">Logged in as: </h2>
+                <br>
                 <a href="index.html" class="button is-warning">Home</a>
                 <a href="about.html" class="button is-warning">About Us</a>
                 <a href="streampage.html" class="button is-warning">Stream</a>
@@ -27,7 +30,7 @@
     <section class="hero is-warning">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title">Library </h1>
+                <h1 id="libraryTitle" class = "user"> 's Personalized Library!</h1>
             </div>
         </div>
     </section>
