@@ -322,7 +322,7 @@ let pause9 = () => {
 
 async function like9() {
   let x = await userRoot.post(`/liked/`+9,
-    { data: 'radar' }, {
+    { data: 'jellyfishJam' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton9" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -342,35 +342,35 @@ async function unlike9() {
 }
 
 let sound10 = new Howl({
-  src: ['sounds/jellyfishJam.mp3']
+  src: ['sounds/zoey101.mp3']
 });
 
-let play9 = () => {
-  sound9.play();
+let play10 = () => {
+  sound10.play();
 }
 
-let pause9 = () => {
-  sound9.pause();
+let pause10 = () => {
+  sound10.pause();
 }
 
-async function like9() {
-  let x = await userRoot.post(`/liked/`+9,
-    { data: 'radar' }, {
+async function like10() {
+  let x = await userRoot.post(`/liked/`+10,
+    { data: 'zoey101' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
-  let html = `<button id="unlikeButton9" type="button" class = "unlikeButton button is-light">Unlike</button>`;
-  $(`#likeButton9`).replaceWith(html);
-  page.on('click', '#unlikeButton9', unlike8);
+  let html = `<button id="unlikeButton10" type="button" class = "unlikeButton button is-light">Unlike</button>`;
+  $(`#likeButton10`).replaceWith(html);
+  page.on('click', '#unlikeButton10', unlike8);
 
 }
 
-async function unlike9() {
-  let x = await userRoot.delete(`/liked/`+9,
+async function unlike10() {
+  let x = await userRoot.delete(`/liked/`+10,
     {
     headers: { Authorization: `Bearer ${jwt}` }
   })
-  let html = `<button id="likeButton9" type="button" class = "likeButton button is-light">Like</button>`;
-  $(`#unlikeButton9`).replaceWith(html);
+  let html = `<button id="likeButton10" type="button" class = "likeButton button is-light">Like</button>`;
+  $(`#unlikeButton10`).replaceWith(html);
   //page.on('click', '#likeButton3', like3);
 }
 
@@ -384,6 +384,7 @@ async function renderPage() {
   unlikeFns[7] = unlike7;
   unlikeFns[8] = unlike8;
   unlikeFns[9] = unlike9;
+  unlikeFns[10] = unlike10;
   let page = $('body');
   page.on('click', '#playButton1', play1);
   page.on('click', '#pauseButton1', pause1);
@@ -412,6 +413,9 @@ async function renderPage() {
   page.on('click', '#playButton9', play9);
   page.on('click', '#pauseButton9', pause9);
   page.on('click', '#likeButton9', like9);
+  page.on('click', '#playButton10', play10);
+  page.on('click', '#pauseButton10', pause10);
+  page.on('click', '#likeButton10', like10);
 
   let x = await userRoot.get(`/liked`,
     {
