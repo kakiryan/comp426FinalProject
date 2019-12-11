@@ -75,7 +75,7 @@ async function unlike1() {
   })
   let html = `<button id="likeButton1" type="button" class = "likeButton button is-light">Like</button>`;
   $(`#unlikeButton1`).replaceWith(html);
-  //page.on('click', '#likeButton1', like1);
+  page.on('click', '#likeButton1', like1);
 }
 
 let sound2 = new Howl({
@@ -327,7 +327,7 @@ async function like9() {
   })
   let html = `<button id="unlikeButton9" type="button" class = "unlikeButton button is-light">Unlike</button>`;
   $(`#likeButton9`).replaceWith(html);
-  page.on('click', '#unlikeButton9', unlike8);
+  page.on('click', '#unlikeButton9', unlike9);
 
 }
 
@@ -360,7 +360,7 @@ async function like10() {
   })
   let html = `<button id="unlikeButton10" type="button" class = "unlikeButton button is-light">Unlike</button>`;
   $(`#likeButton10`).replaceWith(html);
-  page.on('click', '#unlikeButton10', unlike8);
+  page.on('click', '#unlikeButton10', unlike10);
 
 }
 
