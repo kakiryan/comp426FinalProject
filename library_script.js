@@ -12,7 +12,7 @@ async function renderPage() {
       window.location.replace("http://localhost:3000/index.html");
       alert("Please Make a Profile First to View Your Library!")
     }else{
-    $('#libraryTitle').text(`${user}'s Profile`)
+    $('#libraryTitle').text(`${user}'s Personalized Library!`)
     $('#credentials').text(`Logged in as: ${user}`)
   
   }

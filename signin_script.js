@@ -32,5 +32,6 @@ async function renderPage() {
         
     });
 }
+
 $(document).ready(renderPage());
 
