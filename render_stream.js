@@ -81,7 +81,7 @@ async function unlike1() {
   })
   let html = `<button id="likeButton1" type="button" class = "likeButton">Like</button>`;
   $(`#unlikeButton1`).replaceWith(html);
-  page.on('click', '#likeButton1', like1);
+  //page.on('click', '#likeButton1', like1);
 }
 
 let play2 = () => {
@@ -103,13 +103,13 @@ async function like2() {
 }
 
 async function unlike2() {
-  let x = await userRoot.delete(`/liked/`+2,
+  let x = await userRoot.delete(`/liked/` +2,
     {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="likeButton2" type="button" class = "likeButton">Like</button>`;
   $(`#unlikeButton2`).replaceWith(html);
-  page.on('click', '#likeButton2', like2);
+  //page.on('click', '#likeButton2', like2);
 }
 
 let play3 = () => {
@@ -137,7 +137,7 @@ async function unlike3() {
   })
   let html = `<button id="likeButton3" type="button" class = "likeButton">Like</button>`;
   $(`#unlikeButton3`).replaceWith(html);
-  page.on('click', '#likeButton3', like3);
+  //page.on('click', '#likeButton3', like3);
 }
 
 //let playButton1 = document.getElementById('playButton1');
