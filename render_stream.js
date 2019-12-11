@@ -39,6 +39,7 @@ let myStorage = window.localStorage;
 let jwt = myStorage.getItem('jwt');
 let user = myStorage.getItem('user');
 let page = $('body');
+let unlikeFns = []
 
 const userRoot = new axios.create({
   baseURL: 'http://localhost:3000/user'
@@ -69,17 +70,18 @@ async function like1() {
     { data: 'summer' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
-  let html = `<button id="unlikeButton1" type="button" class = "unlikeButton">Unlike</button>`;
+  let html = `<button id="unlikeButton1" type="button" class = "unlikeButton button is-light">Unlike</button>`;
   $(`#likeButton1`).replaceWith(html);
   page.on('click', '#unlikeButton1', unlike1);
 }
 
 async function unlike1() {
+  console.log('here');
   let x = await userRoot.delete(`/liked/` +1,
     {
     headers: { Authorization: `Bearer ${jwt}` }
   })
-  let html = `<button id="likeButton1" type="button" class = "likeButton">Like</button>`;
+  let html = `<button id="likeButton1" type="button" class = "likeButton button is-light">Like</button>`;
   $(`#unlikeButton1`).replaceWith(html);
   //page.on('click', '#likeButton1', like1);
 }
@@ -97,7 +99,7 @@ async function like2() {
     { data: 'goodVibrations' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
-  let html = `<button id="unlikeButton2" type="button" class = "unlikeButton">Unlike</button>`;
+  let html = `<button id="unlikeButton2" type="button" class = "unlikeButton button is-light">Unlike</button>`;
   $(`#likeButton2`).replaceWith(html);
   page.on('click', '#unlikeButton2', unlike2);
 }
@@ -107,7 +109,7 @@ async function unlike2() {
     {
     headers: { Authorization: `Bearer ${jwt}` }
   })
-  let html = `<button id="likeButton2" type="button" class = "likeButton">Like</button>`;
+  let html = `<button id="likeButton2" type="button" class = "likeButton button is-light">Like</button>`;
   $(`#unlikeButton2`).replaceWith(html);
   //page.on('click', '#likeButton2', like2);
 }
@@ -125,9 +127,10 @@ async function like3() {
     { data: 'crazyFrog' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
-  let html = `<button id="unlikeButton3" type="button" class = "unlikeButton">Unlike</button>`;
+  let html = `<button id="unlikeButton3" type="button" class = "unlikeButton button is-light">Unlike</button>`;
   $(`#likeButton3`).replaceWith(html);
   page.on('click', '#unlikeButton3', unlike3);
+
 }
 
 async function unlike3() {
@@ -135,12 +138,15 @@ async function unlike3() {
     {
     headers: { Authorization: `Bearer ${jwt}` }
   })
-  let html = `<button id="likeButton3" type="button" class = "likeButton">Like</button>`;
+  let html = `<button id="likeButton3" type="button" class = "likeButton button is-light">Like</button>`;
   $(`#unlikeButton3`).replaceWith(html);
   //page.on('click', '#likeButton3', like3);
 }
 
 async function renderPage() {
+  unlikeFns[1] = unlike1;
+  unlikeFns[2] = unlike2;
+  unlikeFns[3] = unlike3;
   let page = $('body');
   page.on('click', '#playButton1', play1);
   page.on('click', '#pauseButton1', pause1);
@@ -164,11 +170,14 @@ async function renderPage() {
   {
     let y = likedArray[i];
     console.log(y);
-    let html = `<button id="unlikeButton${i+1}" type="button" class = "unlikeButton">Unlike</button>`;
-    $(`#likeButton${i}`).replaceWith(html);
-    let string = "#unlike" +(i +1);
-    console.log(string);
-    page.on('click', `${string}`);
+    let html = `<button id="unlikeButton${i+1}" type="button" class = "unlikeButton button is-light">Unlike</button>`;
+    $(`#likeButton${i+1}`).replaceWith(html);
+    let buttonName = "#unlikeButton" +(i +1);
+    let x = document.getElementById(buttonName);
+    console.log(x);
+    console.log(buttonName);
+    console.log(unlikeFns[i+1]);
+    page.on('click', buttonName, unlikeFns[i+1]);
   }
   
 }
