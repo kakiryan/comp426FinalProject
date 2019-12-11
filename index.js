@@ -3,6 +3,7 @@ let myStorage = window.localStorage;
 let jwt = myStorage.getItem('jwt');
 function autocomplete(inp, arr) {
   var currentFocus;
+  console.log("here");
   inp.addEventListener("input", function (e) {
     var a, b, i, val = this.value;
     closeAllLists();
@@ -93,19 +94,21 @@ async function getAllEmails() {
 async function getUsers() {
     const response2 = await axios({
         method: 'GET',
-        url: 'http://localhost:3000/private/users',
+        url: 'http://localhost:3000/private',
 
         headers: {Authorization: `Bearer ${jwt}`}
     })
     var s = response2.data.result;
-    var keys = [];
-    for(var k in s) keys.push(k);
-    autocomplete(document.getElementById("myInput"), keys);
+    //console.log(s);
+    //var keys = [];
+    //for(var k in s) keys.push(k);
+    //console.log(keys);
+    autocomplete(document.getElementById("myInput"), s);
 }
 
 
 async function renderPage() {
-    /*
+    
   $('#email').on('click', handleSubmit);
   getAllEmails().then(function(result) {
     console.log(result.data.result);
@@ -119,23 +122,15 @@ async function renderPage() {
     console.log(count);
   })
   console.log(count)
-  */
+  
   getUsers();
-  // $('#email').click(function (e) {
-  //   event.preventDefault();
-  //   console.log(e.target);
-  //   let y = document.getElementById('emailHolder').value;
-  //   const response = axios({
-  //     method: 'POST',
-  //     url: 'http://localhost:3000/public/',
-  //     data: {
-  //       "email": y,
-      
-  //     }
-  //   }).catch(e => {
-  //     console.log(e);
-  //   });
-  // });
+  $("#autocompleteSubmit").submit(function(e) {
+    e.preventDefault();
+    let user = (e.target[0].value);
+    myStorage.setItem('userProfile', user);
+    window.location.href ="viewProfile.html"
+    // let y = ('#myInput').val();
+  });
 }
 
 $(document).ready(renderPage());

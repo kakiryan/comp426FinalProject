@@ -27,7 +27,7 @@ async function renderPage() {
         }).then ((response) => {
             myStorage.setItem('jwt', response.data.jwt);
             let jwt = myStorage.getItem('jwt');
-            window.location.href = "userprofile.html";
+            window.location.href = "myProfile.html";
         });
         
     });
