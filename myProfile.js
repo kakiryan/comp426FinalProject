@@ -1,3 +1,5 @@
+//import {parse, stringify} from 'flatted/esm';
+
 let myStorage = window.localStorage;
 let jwt = myStorage.getItem('jwt');
 let user = myStorage.getItem('user');
@@ -15,7 +17,7 @@ const handleEditBio = function (event) {
   let html2 = `<input class="button is-dark is-small" id="editBioo" value = "Submit Changes" />`;
   $('.bio').append(html);
   $('.bio').append(html2);
-  console.log("post");
+  //console.log("post");
   $('#editBioo').on('click', handleSubmit);
 }
 
@@ -25,7 +27,7 @@ const handleEditMusic = function(event) {
   <input class="button is-dark is-small" id="displayMusic" value = "Add" />`;
 
   $('.musicc').append(html1);
-  console.log("hii");
+  //console.log("hii");
   $('#displayMusic').on('click', handleSubmitMusic);
 }
 
@@ -42,16 +44,37 @@ const handleEditPic = function (event) {
 
 const handleSubmitMusic = function (event) {
   var file = document.getElementById('file').files[0];
+  console.log(file);
   var reader  = new FileReader();
   reader.onload = function(e)  {
-      var audio = document.createElement("img");
-      audio.src = e.target.result;
-      $('.music').text("");
-      $('.music').append(audio);
-      let z =  updateMusic(audio.src);
+      //var audio = document.createElement("img");
+      //audio.src = e.target.result;
+      let html = `<div class="holder">
+                    <button id="playButton1" type="button">Play</button>
+                    <button id="pauseButton1" type="button" class = "pauseButton">Pause</button>
+                  </div>`
+      let sound1 = new Howl({
+          src: [`${e.target.result}`]
+      });
+
+      //sound1.play();
+      $('.musicc').text("");
+      $('.musicc').append(html);
+      console.log(sound1);
+      //const str = stringify(sound1);
+      //let z =  updateMusic(sound1);
   }
-  reader.readAsDataURL(file);
+  let y = reader.readAsDataURL(file);
+  //console.log(y);
 }
+
+let play = () => {
+  sound1.play();
+};
+
+let pause = () => {
+  sound1.pause();
+};
 
 const handleSubmitPic = function (event) {
   var file = document.getElementById('file').files[0];
@@ -87,7 +110,7 @@ async function updatePic(pic) {
 }
 
 async function getMusic() {
-  return await userRoot.get('/music', {
+  return await privateRoot.get('/music', {
     headers: {Authorization: `Bearer ${jwt}`}
   })
 }
@@ -110,7 +133,7 @@ async function updateUser(bio) {
     { data: bio }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
-  console.log(jwt);
+  //console.log(jwt);
 }
 /*
 async function updateUsers(user) {
@@ -122,8 +145,8 @@ async function updateUsers(user) {
 
   console.log(jwt);
 }
-*/
 
+*/
 
 $(function () {
   $('#editBio').on('click', handleEditBio);
@@ -141,23 +164,49 @@ async function renderPage() {
   }else{
   $('#profileTitle').text(`${user}'s Profile`)
   $('#credentials').text(`Logged in as: ${user}`)
+  //let z = await updateUsers();
   let x = await getBio();
   let y = await getPic();
-  let t = await getMusic();
+  //let t = await getMusic();
+  //t.play();
+  //console.log(t);
+
   let html = `<img src="${y.data.result}">`;
-  let audio = `<audio crossorigin>
-                  <source src = "${t.data.result}" type = "audio/mpeg">
-              </audio>`
-  console.log(user);
+  //console.log(user);
   $('.bio').text(x.data.result);
   $('.pic').text("");
   $('.pic').append(html);
-  $('.musicc').append(audio);
-}
+  let html2 = `<div class="holder">
+                <button id="playButton1" type="button">Play</button>
+                <button id="pauseButton1" type="button" class = "pauseButton">Pause</button>
+              </div>`;
+  $('.musicc').append(html2);
+  //var file = t.files[0];
+  //console.log(file);
+
+
+  //var reader  = new FileReader();
+  //reader.onload = function(e)  {
+    //console.log(e.target.result);
+      //var audio = document.createElement("img");
+      //audio.src = e.target.result;
+  //    let html = `<audio crossorigin>
+  //                  <source src = "${e.target.result}" type = "audio/mpeg">
+  //                </audio>`
+  //    $('.musicc').append(html);
+//}
   //$('.pic').append(html);
   //let z = await updateUsers(user);
   //console.log(z.data.result)
 
+  let page = $('body');
+  page.on('click', '#playButton1', play);
+  page.on('click', '#pauseButton1', pause);
+
+
+
+
+}
 }
 
 
