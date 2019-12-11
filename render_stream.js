@@ -65,7 +65,7 @@ let pause1 = () => {
 };
 
 async function like1() {
-  let x = await userRoot.post(`/liked/`,
+  let x = await userRoot.post(`/liked/`+1,
     { data: 'summer' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
@@ -75,8 +75,8 @@ async function like1() {
 }
 
 async function unlike1() {
-  let x = await userRoot.post(`/liked/`,
-    { data: 'summer' }, {
+  let x = await userRoot.delete(`/liked/` +1,
+    {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="likeButton1" type="button" class = "likeButton">Like</button>`;
@@ -93,7 +93,7 @@ let pause2 = () => {
 };
 
 async function like2() {
-  let x = await userRoot.post(`/liked/`,
+  let x = await userRoot.post(`/liked/`+2,
     { data: 'goodVibrations' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
@@ -103,8 +103,8 @@ async function like2() {
 }
 
 async function unlike2() {
-  let x = await userRoot.post(`/liked/`,
-    { data: 'goodVibrations' }, {
+  let x = await userRoot.delete(`/liked/`+2,
+    {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="likeButton2" type="button" class = "likeButton">Like</button>`;
@@ -121,7 +121,7 @@ let pause3 = () => {
 }
 
 async function like3() {
-  let x = await userRoot.post(`/liked/`,
+  let x = await userRoot.post(`/liked/`+3,
     { data: 'crazyFrog' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
@@ -131,8 +131,8 @@ async function like3() {
 }
 
 async function unlike3() {
-  let x = await userRoot.post(`/liked/`,
-    { data: 'crazyFrog' }, {
+  let x = await userRoot.delete(`/liked/`+3,
+    {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="likeButton3" type="button" class = "likeButton">Like</button>`;
