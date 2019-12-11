@@ -425,18 +425,21 @@ async function renderPage() {
   //console.log(Object.keys(x.data.result).length);
   let likedArray = Object.values(x.data.result);
   //console.log(likedArray);
-  for(let i = 0; i < Object.keys(x.data.result).length; i++)
+  for(let i = 0; i < 50; i++)
   {
-    let y = likedArray[i];
-    console.log(likedArray);
-    let html = `<button id="unlikeButton${i+1}" type="button" class = "unlikeButton button is-light">Unlike</button>`;
-    $(`#likeButton${i+1}`).replaceWith(html);
-    let buttonName = "#unlikeButton" +(i +1);
-    let x = document.getElementById(buttonName);
+    let index = Object.keys(x.data.result)[i];
+    if(index !== undefined) {
+      let y = likedArray[i];
+      let html = `<button id="unlikeButton${index}" type="button" class = "unlikeButton button is-light">Unlike</button>`;
+      $(`#likeButton${index}`).replaceWith(html);
+      let buttonName = "#unlikeButton" +(index);
+      let x = document.getElementById(buttonName);
+      page.on('click', buttonName, unlikeFns[index]);
+    }
     //console.log(x);
     //console.log(buttonName);
     //console.log(unlikeFns[i+1]);
-    page.on('click', buttonName, unlikeFns[i+1]);
+    //page.on('click', buttonName, unlikeFns[i+1]);
   }
   
 }
