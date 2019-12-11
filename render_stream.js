@@ -428,7 +428,7 @@ async function renderPage() {
   for(let i = 0; i < Object.keys(x.data.result).length; i++)
   {
     let y = likedArray[i];
-    //console.log(y);
+    console.log(likedArray);
     let html = `<button id="unlikeButton${i+1}" type="button" class = "unlikeButton button is-light">Unlike</button>`;
     $(`#likeButton${i+1}`).replaceWith(html);
     let buttonName = "#unlikeButton" +(i +1);
