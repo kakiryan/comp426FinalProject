@@ -193,3 +193,7 @@ svg,
       transform: rotateZ(1turn);
     }
   }
+
+#libraryHeader {
+  font-size: 30px;
+}

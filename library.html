@@ -13,6 +13,7 @@
     <script type="module" src="library_script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="node_modules/howler/dist/howler.js"></script>
     <section class="hero is-dark is full-height">
         <div class="hero-body">
             <div class="container">
@@ -36,8 +37,9 @@
     </section>
     <section class = "hero is-light is-small">
             <div class="hero-body">
-                <div class="container">
-                    Add songs here
+                <div id="songContainer" class="container">
+                    <h1 id="libraryHeader">Your Liked Songs!</h1>
+                    <br>
                 </div>
             </div>
     </section>
