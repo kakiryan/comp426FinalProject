@@ -17,6 +17,10 @@
 body {
   font: 16px Arial;
 }
+
+.box {
+  width: 300px;
+}
 .autocomplete {
   /*the container must be positioned relative:*/
   position: relative;
@@ -35,6 +39,11 @@ input[type=text] {
 input[type=submit] {
   background-color: DodgerBlue;
   color: #fff;
+}
+
+#file {
+  width:260px;
+  background-color:rgb(253, 165, 165);
 }
 .autocomplete-items {
   position: absolute;
