@@ -374,6 +374,39 @@ async function unlike10() {
   //page.on('click', '#likeButton3', like3);
 }
 
+let sound11 = new Howl({
+  src: ['sounds/01 stressrunstheworld.mp3']
+});
+
+let play11 = () => {
+  sound11.play();
+}
+
+let pause11 = () => {
+  sound11.pause();
+}
+
+async function like11() {
+  let x = await userRoot.post(`/liked/`+11,
+    { data: 'stressRunsTheWorld' }, {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+  let html = `<button id="unlikeButton11" type="button" class = "unlikeButton button is-light">Unlike</button>`;
+  $(`#likeButton11`).replaceWith(html);
+  page.on('click', '#unlikeButton11', unlike11);
+
+}
+
+async function unlike11() {
+  let x = await userRoot.delete(`/liked/`+11,
+    {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+  let html = `<button id="likeButton11" type="button" class = "likeButton button is-light">Like</button>`;
+  $(`#unlikeButton11`).replaceWith(html);
+  //page.on('click', '#likeButton3', like3);
+}
+
 async function renderPage() {
   unlikeFns[1] = unlike1;
   unlikeFns[2] = unlike2;
@@ -385,6 +418,7 @@ async function renderPage() {
   unlikeFns[8] = unlike8;
   unlikeFns[9] = unlike9;
   unlikeFns[10] = unlike10;
+  unlikeFns[11] = unlike11;
   let page = $('body');
   page.on('click', '#playButton1', play1);
   page.on('click', '#pauseButton1', pause1);
@@ -416,6 +450,9 @@ async function renderPage() {
   page.on('click', '#playButton10', play10);
   page.on('click', '#pauseButton10', pause10);
   page.on('click', '#likeButton10', like10);
+  page.on('click', '#playButton11', play11);
+  page.on('click', '#pauseButton11', pause11);
+  page.on('click', '#likeButton11', like11);
 
   let x = await userRoot.get(`/liked`,
     {
