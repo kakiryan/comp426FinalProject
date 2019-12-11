@@ -53,6 +53,7 @@ const handleSubmitMusic = function (event) {
                     <button id="playButton1" type="button">Play</button>
                     <button id="pauseButton1" type="button" class = "pauseButton">Pause</button>
                   </div>`
+      console.log(e.target.result);
       let sound1 = new Howl({
           src: [`${e.target.result}`]
       });
