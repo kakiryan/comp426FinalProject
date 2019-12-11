@@ -407,6 +407,171 @@ async function unlike11() {
   //page.on('click', '#likeButton3', like3);
 }
 
+let sound12 = new Howl({
+  src: ['sounds/Floating Points - LesAlpx.mp3']
+});
+
+let play12 = () => {
+  sound12.play();
+}
+
+let pause12 = () => {
+  sound12.pause();
+}
+
+async function like12() {
+  let x = await userRoot.post(`/liked/`+12,
+    { data: 'floatingPoints' }, {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+  let html = `<button id="unlikeButton12" type="button" class = "unlikeButton button is-light">Unlike</button>`;
+  $(`#likeButton12`).replaceWith(html);
+  page.on('click', '#unlikeButton12', unlike12);
+
+}
+
+async function unlike12() {
+  let x = await userRoot.delete(`/liked/`+12,
+    {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+  let html = `<button id="likeButton12" type="button" class = "likeButton button is-light">Like</button>`;
+  $(`#unlikeButton12`).replaceWith(html);
+  //page.on('click', '#likeButton3', like3);
+}
+
+let sound13 = new Howl({
+  src: ['sounds/ripped-pants.mp3']
+});
+
+let play13 = () => {
+  sound13.play();
+}
+
+let pause13 = () => {
+  sound13.pause();
+}
+
+async function like13() {
+  let x = await userRoot.post(`/liked/`+13,
+    { data: 'rippedPants' }, {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+  let html = `<button id="unlikeButton13" type="button" class = "unlikeButton button is-light">Unlike</button>`;
+  $(`#likeButton13`).replaceWith(html);
+  page.on('click', '#unlikeButton13', unlike13);
+
+}
+
+async function unlike13() {
+  let x = await userRoot.delete(`/liked/`+13,
+    {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+  let html = `<button id="likeButton13" type="button" class = "likeButton button is-light">Like</button>`;
+  $(`#unlikeButton13`).replaceWith(html);
+  //page.on('click', '#likeButton3', like3);
+}
+
+let sound14 = new Howl({
+  src: ['sounds/frostyTheSnowman.mp3']
+});
+
+let play14 = () => {
+  sound14.play();
+}
+
+let pause14 = () => {
+  sound14.pause();
+}
+
+async function like14() {
+  let x = await userRoot.post(`/liked/`+14,
+    { data: 'rippedPants' }, {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+  let html = `<button id="unlikeButton14" type="button" class = "unlikeButton button is-light">Unlike</button>`;
+  $(`#likeButton14`).replaceWith(html);
+  page.on('click', '#unlikeButton14', unlike14);
+
+}
+
+async function unlike14() {
+  let x = await userRoot.delete(`/liked/`+14,
+    {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+  let html = `<button id="likeButton14" type="button" class = "likeButton button is-light">Like</button>`;
+  $(`#unlikeButton14`).replaceWith(html);
+  //page.on('click', '#likeButton3', like3);
+}
+
+let sound15 = new Howl({
+  src: ['sounds/SFIRE - SFIRE6.mp3']
+});
+
+let play15 = () => {
+  sound15.play();
+}
+
+let pause15 = () => {
+  sound15.pause();
+}
+
+async function like15() {
+  let x = await userRoot.post(`/liked/`+15,
+    { data: 'rippedPants' }, {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+  let html = `<button id="unlikeButton15" type="button" class = "unlikeButton button is-light">Unlike</button>`;
+  $(`#likeButton15`).replaceWith(html);
+  page.on('click', '#unlikeButton15', unlike15);
+
+}
+
+async function unlike15() {
+  let x = await userRoot.delete(`/liked/`+15,
+    {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+  let html = `<button id="likeButton15" type="button" class = "likeButton button is-light">Like</button>`;
+  $(`#unlikeButton15`).replaceWith(html);
+  //page.on('click', '#likeButton3', like3);
+}
+
+let sound16 = new Howl({
+  src: ['sounds/SHYGIRL — BB.mp3']
+});
+
+let play16 = () => {
+  sound16.play();
+}
+
+let pause16 = () => {
+  sound16.pause();
+}
+
+async function like16() {
+  let x = await userRoot.post(`/liked/`+16,
+    { data: 'rippedPants' }, {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+  let html = `<button id="unlikeButton16" type="button" class = "unlikeButton button is-light">Unlike</button>`;
+  $(`#likeButton16`).replaceWith(html);
+  page.on('click', '#unlikeButton16', unlike16);
+
+}
+
+async function unlike16() {
+  let x = await userRoot.delete(`/liked/`+16,
+    {
+    headers: { Authorization: `Bearer ${jwt}` }
+  })
+  let html = `<button id="likeButton16" type="button" class = "likeButton button is-light">Like</button>`;
+  $(`#unlikeButton16`).replaceWith(html);
+  //page.on('click', '#likeButton3', like3);
+}
+
 async function renderPage() {
   unlikeFns[1] = unlike1;
   unlikeFns[2] = unlike2;
@@ -419,6 +584,12 @@ async function renderPage() {
   unlikeFns[9] = unlike9;
   unlikeFns[10] = unlike10;
   unlikeFns[11] = unlike11;
+  unlikeFns[12] = unlike12;
+  unlikeFns[13] = unlike13;
+  unlikeFns[14] = unlike14;
+  unlikeFns[15] = unlike15;
+  unlikeFns[16] = unlike16;
+
   let page = $('body');
   page.on('click', '#playButton1', play1);
   page.on('click', '#pauseButton1', pause1);
@@ -453,6 +624,21 @@ async function renderPage() {
   page.on('click', '#playButton11', play11);
   page.on('click', '#pauseButton11', pause11);
   page.on('click', '#likeButton11', like11);
+  page.on('click', '#playButton12', play12);
+  page.on('click', '#pauseButton12', pause12);
+  page.on('click', '#likeButton12', like12);
+  page.on('click', '#playButton13', play13);
+  page.on('click', '#pauseButton13', pause13);
+  page.on('click', '#likeButton13', like13);
+  page.on('click', '#playButton14', play14);
+  page.on('click', '#pauseButton14', pause14);
+  page.on('click', '#likeButton14', like14);
+  page.on('click', '#playButton15', play15);
+  page.on('click', '#pauseButton15', pause15);
+  page.on('click', '#likeButton15', like15);
+  page.on('click', '#playButton16', play16);
+  page.on('click', '#pauseButton16', pause16);
+  page.on('click', '#likeButton16', like16);
 
   let x = await userRoot.get(`/liked`,
     {
