@@ -97,7 +97,7 @@ async function like2() {
     { data: 'goodVibrations' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
-  let html = `<button id="unlikeButton1" type="button" class = "unlikeButton">Unlike</button>`;
+  let html = `<button id="unlikeButton2" type="button" class = "unlikeButton">Unlike</button>`;
   $(`#likeButton2`).replaceWith(html);
   page.on('click', '#unlikeButton2', unlike2);
 }
