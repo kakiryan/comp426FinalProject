@@ -59,7 +59,7 @@ let pause1 = () => {
 
 async function like1() {
   let x = await userRoot.post(`/liked/`+1,
-    { data: 'summer' }, {
+    { data: 'Summer' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton1" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -92,7 +92,7 @@ let pause2 = () => {
 
 async function like2() {
   let x = await userRoot.post(`/liked/`+2,
-    { data: 'goodVibrations' }, {
+    { data: 'Good Vibrations' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton2" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -124,7 +124,7 @@ let pause3 = () => {
 
 async function like3() {
   let x = await userRoot.post(`/liked/`+3,
-    { data: 'crazyFrog' }, {
+    { data: 'Crazy Frog' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton3" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -157,7 +157,7 @@ let pause4 = () => {
 
 async function like4() {
   let x = await userRoot.post(`/liked/`+4,
-    { data: 'nyanCat' }, {
+    { data: 'Nyan Cat' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton4" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -190,7 +190,7 @@ let pause5 = () => {
 
 async function like5() {
   let x = await userRoot.post(`/liked/`+5,
-    { data: 'iLikeToMoveIt' }, {
+    { data: 'I Like To Move It' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton5" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -223,7 +223,7 @@ let pause6 = () => {
 
 async function like6() {
   let x = await userRoot.post(`/liked/`+6,
-    { data: 'electricZoo' }, {
+    { data: 'Electric Zoo' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton6" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -256,7 +256,7 @@ let pause7 = () => {
 
 async function like7() {
   let x = await userRoot.post(`/liked/`+7,
-    { data: 'gummyBear' }, {
+    { data: 'The Gummy Bear Song' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton7" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -289,7 +289,7 @@ let pause8 = () => {
 
 async function like8() {
   let x = await userRoot.post(`/liked/`+8,
-    { data: 'radar' }, {
+    { data: 'Radar' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton8" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -322,7 +322,7 @@ let pause9 = () => {
 
 async function like9() {
   let x = await userRoot.post(`/liked/`+9,
-    { data: 'jellyfishJam' }, {
+    { data: 'Jellyfish Jam' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton9" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -355,7 +355,7 @@ let pause10 = () => {
 
 async function like10() {
   let x = await userRoot.post(`/liked/`+10,
-    { data: 'zoey101' }, {
+    { data: 'Zoey 101 Theme Song' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton10" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -388,7 +388,7 @@ let pause11 = () => {
 
 async function like11() {
   let x = await userRoot.post(`/liked/`+11,
-    { data: 'stressRunsTheWorld' }, {
+    { data: 'Stressrunstheworld' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton11" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -421,7 +421,7 @@ let pause12 = () => {
 
 async function like12() {
   let x = await userRoot.post(`/liked/`+12,
-    { data: 'floatingPoints' }, {
+    { data: 'Floating Points' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton12" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -454,7 +454,7 @@ let pause13 = () => {
 
 async function like13() {
   let x = await userRoot.post(`/liked/`+13,
-    { data: 'rippedPants' }, {
+    { data: 'When I Ripped My Pants' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton13" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -487,7 +487,7 @@ let pause14 = () => {
 
 async function like14() {
   let x = await userRoot.post(`/liked/`+14,
-    { data: 'rippedPants' }, {
+    { data: 'Frosty the Snowman' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton14" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -520,7 +520,7 @@ let pause15 = () => {
 
 async function like15() {
   let x = await userRoot.post(`/liked/`+15,
-    { data: 'rippedPants' }, {
+    { data: 'Sfire 6' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton15" type="button" class = "unlikeButton button is-light">Unlike</button>`;
@@ -553,7 +553,7 @@ let pause16 = () => {
 
 async function like16() {
   let x = await userRoot.post(`/liked/`+16,
-    { data: 'rippedPants' }, {
+    { data: 'Shygirl' }, {
     headers: { Authorization: `Bearer ${jwt}` }
   })
   let html = `<button id="unlikeButton16" type="button" class = "unlikeButton button is-light">Unlike</button>`;

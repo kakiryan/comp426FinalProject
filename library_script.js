@@ -289,18 +289,38 @@ async function renderPage() {
             songDiv.append(br);
             console.log(songDiv);
             let x;
-            if (title.textContent == "summer") {
+            if (title.textContent == "Summer") {
                 x = 1;
-            } else if (title.textContent == "goodVibrations") {
+            } else if (title.textContent == "Good Vibrations") {
                 x = 2;
-            } else if (title.textContent == "crazyFrog") {
+            } else if (title.textContent == "Crazy Frog") {
                 x = 3;
-            } else if (title.textContent == "nyanCat") {
+            } else if (title.textContent == "Nyan Cat") {
                 x = 4;
-            } else if (title.textContent =="iLikeToMoveIt") {
+            } else if (title.textContent =="I Like To Move It") {
                 x = 5;
-            } else if (title.textContent == "electricZoo") {
+            } else if (title.textContent == "Electric Zoo") {
                 x=6;
+            } else if (title.textContent == "The Gummy Bear Song") {
+                x=7;
+            } else if (title.textContent == "Radar") {
+                x=8;
+            } else if (title.textContent == "Jellyfish Jam") {
+                x=9;
+            } else if (title.textContent == "Zoey 101 Theme Song") {
+                x=10;
+            } else if (title.textContent == "Stressrunstheworld") {
+                x=11;
+            } else if (title.textContent == "Floating Points") {
+                x =12;
+            } else if (title.textContent == "When I Ripped My Pants") {
+                x = 13;
+            } else if (title.textContent == "Frosty the Snowman") {
+                x = 14;
+            } else if (title.textContent == "Sfire 6") {
+                x=15;
+            } else if (title.textContent == "Shygirl") {
+                x=16;
             }
             $('body').on('click', '#' + playBtn.id, playFns[x])
             $('body').on('click', '#' + pauseBtn.id, pauseFns[x])
